@@ -45,8 +45,9 @@ public class LoginStepDefs_ysnblgn {
 
     @Then("{string} warning message should appear")
     public void warningMessageShouldAppear(String expectedWarningMessage) {
-        if(expectedWarningMessage.equals("Please fill out this field")){
+        if(new LoginPage_ysnblgn().username.getAttribute("value").isEmpty()){
             Assert.assertEquals(expectedWarningMessage,new LoginPage_ysnblgn().username.getAttribute("validationMessage"));
+        }else if(new LoginPage_ysnblgn().password.getAttribute("value").isEmpty()){
             Assert.assertEquals(expectedWarningMessage,new LoginPage_ysnblgn().password.getAttribute("validationMessage"));
         }
     }

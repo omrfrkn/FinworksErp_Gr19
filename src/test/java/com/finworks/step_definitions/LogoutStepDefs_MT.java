@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
 public class LogoutStepDefs_MT {
+
     @Then("the user should able to logout")
     public void the_user_should_able_to_logout() {
         LoginPage_MT loginPage = new LoginPage_MT();

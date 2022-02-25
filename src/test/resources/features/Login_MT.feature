@@ -30,7 +30,7 @@ Feature: User should be able to login
       | posmanager10@info.com | password   |
       | username              | posmanager |
 
-  @wip
+
   Scenario Outline:
     When the user enters the invalid_empty "<userName>" or "<passWord>"
     Then the user should get caution message "Lütfen bu alanı doldurun."
@@ -39,7 +39,7 @@ Feature: User should be able to login
       | posmanager10@info.com |            |
       |                       | posmanager |
       |                       |            |
-
+  @wip
   Scenario: Reset Password Button
     When the user clicks the reset password button
     Then the user should able to get title "Reset password | Best solution for startups"

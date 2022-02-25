@@ -26,18 +26,17 @@ public class LoginPage_MT extends BasePage{
     @FindBy(tagName = "p")
     public WebElement error_message;
 
-    public void login(String userNameStr, String passwordStr) {
-        userName.sendKeys(userNameStr);
-        password.sendKeys(passwordStr);
-        logIn.click();
-}
-
     @FindBy(xpath = "//span[@class='oe_topbar_name']")
     public WebElement actualUserName;
 
     @FindBy(xpath = "//a[@data-menu='logout']")
     public WebElement logOutLink;
 
+    public void login(String userNameStr, String passwordStr) {
+        userName.sendKeys(userNameStr);
+        password.sendKeys(passwordStr);
+        logIn.click();
+}
 
     public void logOut(){
         BrowserUtils.waitFor(2);

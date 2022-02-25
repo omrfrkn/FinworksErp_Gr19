@@ -50,6 +50,11 @@ public class LoginStepDefs_MT {
         Assert.assertEquals(expectedTitle,Driver.get().getTitle());
 
     }
+    @When("the user clicks the reset password button")
+    public void theUserClicksTheResetPasswordButton() {
+        LoginPage_MT loginPage = new LoginPage_MT();
+        loginPage.resetPasswordButton.click();
+    }
 
     @Then("the user should get caution message {string}")
     public void theUserShouldGetCautionMessage(String expectedMessage) {
@@ -60,9 +65,5 @@ public class LoginStepDefs_MT {
         Assert.assertEquals(expectedMessage,new LoginPage_MT().password.getAttribute("validationMessage"));}
 
     }
-    @When("the user clicks the reset password button")
-    public void theUserClicksTheResetPasswordButton() {
-        LoginPage_MT loginPage = new LoginPage_MT();
-        loginPage.resetPasswordButton.click();
-    }
+
 }

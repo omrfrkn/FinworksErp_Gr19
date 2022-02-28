@@ -14,11 +14,11 @@ public class LoginStepDefs_tarik {
     LoginPage_tarik loginPage_tarik = new LoginPage_tarik();
     boolean flag = false;
 
-    @When("User enters valid {string} and {string}")
+    @When("User enters valid {string} and {string}_tarik")
     public void user_enters_valid_and(String email, String password) {
         loginPage_tarik.login(email, password);
     }
-    @Then("User should see page title {string}")
+    @Then("User should see page title {string}_tarik")
     public void user_should_see_page_title(String expectedTitle) {
         BrowserUtils.waitFor(7);
         String actualPageTitle = Driver.get().getTitle();
@@ -26,25 +26,25 @@ public class LoginStepDefs_tarik {
         System.out.println("actualPageTitle = " + actualPageTitle);
         Assert.assertEquals("Verify page title", expectedTitle, actualPageTitle);
     }
-    @When("User enters invalid {string} and {string}")
+    @When("User enters invalid {string} and {string}_tarik")
     public void user_enters_invalid_and(String email, String password) {
         loginPage_tarik.login(email, password);
     }
-    @Then("User should see {string} warning message")
+    @Then("User should see {string} warning message_tarik")
     public void user_should_see_warning_message(String expectedMessage) {
         String actualMessage = loginPage_tarik.wrongPasswordEmailAlert.getText();
         System.out.println("expectedMessage = " + expectedMessage);
         System.out.println("actualMessage = " + actualMessage);
         Assert.assertEquals("verify warning message", expectedMessage, actualMessage);
     }
-    @When("User does not enter {string} or {string}")
+    @When("User does not enter {string} or {string}_tarik")
     public void user_does_not_enter_or(String email, String password) {
         loginPage_tarik.login(email, password);
         if (email.isEmpty()) {
             flag = true;
         }
     }
-    @Then("User should see {string} error message")
+    @Then("User should see {string} error message_tarik")
     public void user_should_see_error_message(String expectedMessage) {
         String actualMessage;
         if (flag) {

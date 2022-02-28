@@ -2,9 +2,11 @@ package com.finworks.step_definitions;
 
 import com.finworks.pages.LoginPage_ysnblgn;
 import com.finworks.utilities.BrowserUtils;
+import com.finworks.utilities.ConfigurationReader;
 import com.finworks.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
@@ -15,12 +17,18 @@ import org.junit.Assert;
 
 
 public class LoginStepDefs_ysnblgn {
-    @Given("the user logged in")
+    @Given("the user is on the login page")
+    public void theUserIsOnTheLoginPage() {
+
+        Driver.get().get(ConfigurationReader.get("url"));
+    }
+    
+    @When("the user logged in")
     public void the_user_logged_in() {
         new LoginPage_ysnblgn().login();
     }
 
-    @Given("the user logged in {string} and {string}")
+    @When("the user logged in with {string} and {string}")
     public void the_user_logged_in(String username, String password) {
         new LoginPage_ysnblgn().login(username,password);
     }

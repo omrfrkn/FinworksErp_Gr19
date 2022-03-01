@@ -1,19 +1,19 @@
 @login
-Feature: User should be able to login
+Feature: User should be able to login_MT
 
   Background:
-    Given the user is on the login page
+    Given the user is on the login page_MT
 
 
-  Scenario: Login as a valid user
-    When the user enters the valid "posmanager" information
-    Then the user should able to get title "Odoo"
+  Scenario: Login as a valid user_MT
+    When the user enters the valid "posmanager" information_MT
+    Then the user should able to get title "#Inbox - Odoo"_MT
 
 
   Scenario Outline:
-    When the user should enter valid "<userName>" and valid "<passWord>"
-    Then the user should able to get title "Odoo"
-    And the user should able to get actual "<userType>"
+    When the user should enter valid "<userName>" and valid "<passWord>"_MT
+    Then the user should able to get title "#Inbox - Odoo"_MT
+    And the user should able to get actual "<userType>"_MT
     Examples:
       | userName                   | passWord         | userType            |
       | salesmanager15@info.com    | salesmanager     | SalesManager15      |
@@ -23,8 +23,8 @@ Feature: User should be able to login
       | manuf_user10@info.com      | manufuser        | ManufacturingUser10 |
 
   Scenario Outline:
-    When the user enters the invalid_empty "<userName>" or "<passWord>"
-    Then the user should get error message "Wrong login/password"
+    When the user enters the invalid_empty "<userName>" or "<passWord>"_MT
+    Then the user should get error message "Wrong login/password"_MT
     Examples:
       | userName              | passWord   |
       | posmanager10@info.com | password   |
@@ -32,14 +32,14 @@ Feature: User should be able to login
 
 
   Scenario Outline:
-    When the user enters the invalid_empty "<userName>" or "<passWord>"
-    Then the user should get caution message "Lütfen bu alanı doldurun."
+    When the user enters the invalid_empty "<userName>" or "<passWord>"_MT
+    Then the user should get caution message "Lütfen bu alanı doldurun."_MT
     Examples:
       | userName              | passWord   |
       | posmanager10@info.com |            |
       |                       | posmanager |
       |                       |            |
   @wip
-  Scenario: Reset Password Button
-    When the user clicks the reset password button
-    Then the user should able to get title "Reset password | Best solution for startups"
+  Scenario: Reset Password Button_MT
+    When the user clicks the reset password button_MT
+    Then the user should able to get title "Reset password | Best solution for startups"_MT

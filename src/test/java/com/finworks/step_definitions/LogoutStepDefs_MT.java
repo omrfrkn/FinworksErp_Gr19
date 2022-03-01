@@ -7,7 +7,7 @@ import org.junit.Assert;
 
 public class LogoutStepDefs_MT {
 
-    @Then("the user should able to logout")
+    @Then("the user should able to logout_MT")
     public void the_user_should_able_to_logout() {
         LoginPage_MT loginPage = new LoginPage_MT();
         loginPage.logOut();

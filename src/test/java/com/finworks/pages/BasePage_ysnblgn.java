@@ -20,19 +20,24 @@ public abstract class BasePage_ysnblgn {
     }
 
     @FindBy(className = "oe_topbar_name")
-    public WebElement userName;
+    public WebElement username;
 
     @FindBy(linkText = "Log out")
     public WebElement logout;
 
     public String getUserName(){
-        return userName.getText();
+
+        return username.getText();
     }
 
     public void navigateTo(String tab){
         String locator = "//div[@class='navbar-collapse collapse']//a[contains(.,'"+ tab +"')]";
         BrowserUtils.waitForClickablility(By.xpath(locator),5);
         Driver.get().findElement(By.xpath(locator)).click();
+    }
+
+    public void logout(){
+        BrowserUtils.clickWithJS(logout);
     }
 
 

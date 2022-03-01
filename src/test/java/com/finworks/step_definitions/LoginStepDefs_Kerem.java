@@ -21,8 +21,7 @@ public class LoginStepDefs_Kerem {
 
     @When("the user enters {string} and {string}_KT")
     public void the_user_enters_and(String email, String password) {
-        email = ConfigurationReader.get("username");
-        password=ConfigurationReader.get("password");
+
         loginPage.login(email, password);
         BrowserUtils.waitFor(2);
     }

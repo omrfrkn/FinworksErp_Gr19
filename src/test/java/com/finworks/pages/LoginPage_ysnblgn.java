@@ -13,7 +13,7 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage_ysnblgn extends BasePage_ysnblgn {
 
     @FindBy(id = "login")
-    public WebElement username;
+    public WebElement email;
 
     @FindBy(id = "password")
     public WebElement password;
@@ -28,13 +28,13 @@ public class LoginPage_ysnblgn extends BasePage_ysnblgn {
     public WebElement errorMessage;
 
     public void login(){
-        this.username.sendKeys(ConfigurationReader.get("posmanager_email"));
+        this.email.sendKeys(ConfigurationReader.get("posmanager_email"));
         this.password.sendKeys(ConfigurationReader.get("posmanager_password"));
         loginBtn.click();
     }
 
     public void login(String username, String password){
-        this.username.sendKeys(username);
+        this.email.sendKeys(username);
         this.password.sendKeys(password);
         loginBtn.click();
     }

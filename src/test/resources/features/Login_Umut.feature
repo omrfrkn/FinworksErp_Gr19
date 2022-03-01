@@ -2,16 +2,16 @@
 Feature: Login Functionality
 
   Background:
-    Given the user is on the login page
+    Given the user is on the login page_US
 
   @Valid
   Scenario Outline: User can login with valid credentials
 
-    When the user enters valid email "<email>"
-    And the user enters valid password "<password>"
-    When the user click login button
-    Then the user should see page title as "#Inbox - Odoo"
-    And the user should see own username as "<username>"
+    When the user enters valid email "<email>"_US
+    And the user enters valid password "<password>"_US
+    When the user click login button_US
+    Then the user should see page title as "#Inbox - Odoo"_US
+    And the user should see own username as "<username>"_US
 
     Examples:
       | username            | email                      | password         |
@@ -23,8 +23,8 @@ Feature: Login Functionality
 
   @InValid
   Scenario Outline:User can NOT login with invalid credentials
-    When the user logins with "<email>" and "<password>"
-    Then system should shows "Wrong login/password" error message
+    When the user logins with "<email>" and "<password>"_US
+    Then system should shows "Wrong login/password" error message_US
 
     Examples:
       | email                 | password   |
@@ -34,8 +34,8 @@ Feature: Login Functionality
 
   @emptyCred
   Scenario Outline: User can NOT login with empty fields
-    When the user logins with "<email>" and "<password>"
-    Then system should shows "Please fill out this field." validation message
+    When the user logins with "<email>" and "<password>"_US
+    Then system should shows "Please fill out this field." validation message_US
 
     Examples:
       | email                 | password   |

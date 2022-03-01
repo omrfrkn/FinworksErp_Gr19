@@ -6,12 +6,12 @@ import io.cucumber.java.en.When;
 
 public class LogoutStepDefs_Umut {
 
-    @When("the user click user menu")
+    @When("the user click user menu_US")
     public void the_user_click_user_menu() {
         new LoginPage_Umut().userName.click();
     }
 
-    @When("the user click logout button")
+    @When("the user click logout button_US")
     public void the_user_click_logout_button() {
         new LoginPage_Umut().logoutBtn.click();
     }

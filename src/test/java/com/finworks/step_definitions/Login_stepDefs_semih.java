@@ -12,7 +12,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Login_stepDefs_semih {
+public class Login_stepDefs_semih1 {
     @Given("the user is on the login page_sb")
     public void the_user_is_on_the_login_page_sb() {
         BrowserUtils.waitForPageToLoad(5);

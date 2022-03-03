@@ -1,4 +1,4 @@
-@smoke
+
 Feature: FinworksErp Logout Scenarios
 
   Scenario Outline: User should be able to logout

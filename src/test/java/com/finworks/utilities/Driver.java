@@ -28,7 +28,7 @@ public class Driver {
         // Test
         if (driver == null) {
             // this line will tell which browser should open based on the value from properties file
-            String browser = ConfigurationReader.get("browser");
+            String browser = ConfigurationReader_MT.get("browser");
             switch (browser.toLowerCase()) {
                 case "chrome":
 //                    ChromeOptions handlingSSL = new ChromeOptions();

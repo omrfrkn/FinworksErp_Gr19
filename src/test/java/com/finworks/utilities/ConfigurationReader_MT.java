@@ -9,14 +9,14 @@ import java.util.Properties;
  */
 
 
-public class ConfigurationReader {
+public class ConfigurationReader_MT {
 
     private static Properties properties;
 
     static {
 
         try {
-            String path = "configuration.properties";
+            String path = "configuration_MT.properties";
             FileInputStream input = new FileInputStream(path);
             properties = new Properties();
             properties.load(input);

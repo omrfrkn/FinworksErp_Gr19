@@ -1,6 +1,6 @@
 package com.finworks.step_definitions;
 
-import com.finworks.utilities.ConfigurationReader;
+import com.finworks.utilities.ConfigurationReader_MT;
 import com.finworks.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -21,7 +21,7 @@ public class Hooks {
     @Before
     public void setUp(){
         Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        Driver.get().get(ConfigurationReader.get("url"));
+        Driver.get().get(ConfigurationReader_MT.get("url"));
         Driver.get().manage().window().maximize();
     }
 

@@ -1,8 +1,9 @@
-
+@smoke
 Feature: FinWorksErp Login Feature
 
   Background:
     Given the user is on the login page_KT
+
 
   Scenario Outline: The user should be able to login with valid credentials_KT
 
@@ -18,13 +19,12 @@ Feature: FinWorksErp Login Feature
       | ManufacturingUser16 | manuf_user16@info.com      | manufuser        |
 
 
-
   Scenario Outline: The users should not be able to login with invalid credentials_KT
 
     When user enters invalid "<email>" and "<password>"_KT
     Then user should be able too see error message as "Wrong login/password"_KT
     Examples:
-      | email         |  | password |
+      | email            |  | password |
       | jamal10@info.com |  | jamal10  |
       | oscar10@info.com |  | oscar    |
 
@@ -34,7 +34,7 @@ Feature: FinWorksErp Login Feature
     Then user should be able to see warning message as "Please fill out this field."_KT
 
     Examples:
-      | email              |  | password   |
+      | email                 |  | password   |
       | posmanager10@info.com |  |            |
       |                       |  | posmanager |
 

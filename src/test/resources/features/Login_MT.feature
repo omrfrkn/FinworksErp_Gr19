@@ -39,7 +39,7 @@ Feature: User should be able to login_MT
       | posmanager10@info.com |            |
       |                       | posmanager |
       |                       |            |
-  @wip
-  Scenario: Reset Password Button_MT
+
+  Scenario: Reset Password FUNCTIONALITY_MT
     When the user clicks the reset password button_MT
     Then the user should able to get title "Reset password | Best solution for startups"_MT

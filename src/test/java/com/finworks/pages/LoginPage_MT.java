@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage_MT extends BasePage{
+public class LoginPage_MT extends BasePage_MT{
     public LoginPage_MT() {
         PageFactory.initElements(Driver.get(), this);
     }
@@ -39,8 +39,13 @@ public class LoginPage_MT extends BasePage{
 }
 
     public void logOut(){
-        BrowserUtils.waitFor(2);
-        BrowserUtils.clickWithJS(actualUserName);
+
         BrowserUtils.clickWithJS(logOutLink);
     }
+
+
+    public void setActualUserName() {
+        BrowserUtils.waitFor(2);
+        BrowserUtils.clickWithJS(actualUserName);
     }
+}

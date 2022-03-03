@@ -1,7 +1,7 @@
 package com.finworks.step_definitions;
 
 import com.finworks.pages.LoginPage_MT;
-import com.finworks.utilities.ConfigurationReader;
+import com.finworks.utilities.ConfigurationReader_MT;
 import com.finworks.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,13 +14,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginStepDefs_MT {
     @Given("the user is on the login page_MT")
     public void the_user_is_on_the_login_page() {
-        String url = ConfigurationReader.get("url");
+        String url = ConfigurationReader_MT.get("url");
         Driver.get().get(url);
     }
     @When("the user enters the valid {string} information_MT")
     public void the_user_enters_the_valid_information(String user) {
-        String username = ConfigurationReader.get(user+"_email");
-        String password = ConfigurationReader.get(user+"_password");
+        String username = ConfigurationReader_MT.get(user+"_email");
+        String password = ConfigurationReader_MT.get(user+"_password");
 
         LoginPage_MT loginPage = new LoginPage_MT();
         loginPage.login(username, password);

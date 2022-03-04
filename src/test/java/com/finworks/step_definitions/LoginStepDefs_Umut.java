@@ -46,6 +46,7 @@ public class LoginStepDefs_Umut {
 
     @Then("the user should see page title as {string}_US")
     public void the_user_should_be_on_the_page(String expectedPageTitle) {
+        BrowserUtils.waitFor(2);
         String actualPageTitle = Driver.get().getTitle();
         Assert.assertEquals("verify page title", expectedPageTitle, actualPageTitle);
     }

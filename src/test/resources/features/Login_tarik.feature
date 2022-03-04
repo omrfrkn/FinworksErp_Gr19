@@ -1,4 +1,4 @@
-@smoke
+
 Feature: FinworksErp Login Scenarios
 
   Scenario Outline:User should be able to login with valid credentials

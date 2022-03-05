@@ -3,6 +3,7 @@ package com.finworks.pages;
 import com.finworks.utilities.BrowserUtils;
 import com.finworks.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,6 +20,9 @@ public abstract class BasePage_Umut {
     @FindBy(xpath = "//a[@data-menu='logout']")
     public WebElement logoutBtn;
 
+    @FindBy(className = "o_searchview_input")
+    public WebElement searchBox;
+
     public String getUserName() {
         return userName.getText();
     }
@@ -34,4 +38,13 @@ public abstract class BasePage_Umut {
         logoutBtn.click();
         BrowserUtils.waitFor(2);
     }
+
+    public void search(String searchText){
+
+        searchBox.sendKeys(searchText);
+        searchBox.sendKeys(Keys.ENTER);
+
+    }
+
+
 }

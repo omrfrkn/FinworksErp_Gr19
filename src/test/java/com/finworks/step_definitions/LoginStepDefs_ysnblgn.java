@@ -28,7 +28,7 @@ public class LoginStepDefs_ysnblgn {
         new LoginPage_ysnblgn().login();
     }
 
-    @When("the user logged in with {string} and {string}_YB")
+    @When("the user logs in with {string} and {string}_YB")
     public void the_user_logged_in(String username, String password) {
         new LoginPage_ysnblgn().login(username,password);
     }

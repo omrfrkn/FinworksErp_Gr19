@@ -5,7 +5,7 @@ Feature: FinworksErp Login Feature
     Given the user is on the login page_YB
 
   Scenario Outline: Login Function With Valid Credentials
-    When the user logged in with "<email>" and "<password>"_YB
+    When the user logs in with "<email>" and "<password>"_YB
     Then the user should see the title "#Inbox - Odoo"_YB
     And the user should see own username as "<username>"_YB
     Examples:
@@ -17,7 +17,7 @@ Feature: FinworksErp Login Feature
       | ManufacturingUser16 | manuf_user16@info.com      | manufuser        |
 
   Scenario Outline: the user should NOT be able to login with invalid credentials
-    When the user logged in with "<username>" and "<password>"_YB
+    When the user logs in with "<username>" and "<password>"_YB
     Then "Wrong login/password" error message should appear_YB
 
     Examples:
@@ -27,7 +27,7 @@ Feature: FinworksErp Login Feature
       | wrong                 | posmanager |
 
   Scenario Outline: the user should NOT be able to login with empty credentials
-    When the user logged in with "<username>" and "<password>"_YB
+    When the user logs in with "<username>" and "<password>"_YB
     Then "Please fill out this field." warning message should appear_YB
 
     Examples:

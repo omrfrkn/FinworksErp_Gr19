@@ -9,6 +9,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginStepDefs_Kerem {
 
@@ -23,43 +25,44 @@ public class LoginStepDefs_Kerem {
     public void the_user_enters_and(String email, String password) {
 
         loginPage.login(email, password);
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitForPageToLoad(5);
     }
 
     @Then("the title contains {string}_KT")
     public void the_title_contains(String expectedTitle) {
-        BrowserUtils.waitFor(2);
+        WebDriverWait wait = new WebDriverWait(Driver.get(),10);
+        wait.until(ExpectedConditions.titleIs(expectedTitle));
         String actualTitle = Driver.get().getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
     }
 
     @Then("the user should be able to see own name as a {string}_KT")
     public void the_user_should_be_able_to_see_own_name_as_a(String expectedName) {
         String actualName = new DashBoardPage_Kerem().getUserName();
-        Assert.assertEquals(expectedName,actualName);
+        Assert.assertEquals(expectedName, actualName);
     }
 
 
     @Then("user should be able too see error message as {string}_KT")
     public void user_should_be_able_too_see_error_message_as(String expectedMessage) {
-        BrowserUtils.waitFor(2);
         String actualMessage = loginPage.wrongValidMessage.getText();
-        Assert.assertEquals(expectedMessage,actualMessage);
+        BrowserUtils.waitForVisibility(loginPage.wrongValidMessage,10);
+        Assert.assertEquals(expectedMessage, actualMessage);
     }
 
     @Then("user should be able to see warning message as {string}_KT")
     public void user_should_be_able_to_see_warning_message_as(String expectedMessage) {
-        if (loginPage.emailBox.getAttribute("value").isEmpty()){
-            Assert.assertEquals(expectedMessage,loginPage.emailBox.getAttribute("validationMessage"));
-        }else if (loginPage.passwordBox.getAttribute("value").isEmpty()){
-            Assert.assertEquals(expectedMessage,loginPage.passwordBox.getAttribute("validationMessage"));
+        if (loginPage.emailBox.getAttribute("value").isEmpty()) {
+            Assert.assertEquals(expectedMessage, loginPage.emailBox.getAttribute("validationMessage"));
+        } else if (loginPage.passwordBox.getAttribute("value").isEmpty()) {
+            Assert.assertEquals(expectedMessage, loginPage.passwordBox.getAttribute("validationMessage"));
         }
     }
 
 
     @When("user enters invalid {string} and {string}_KT")
     public void user_enters_invalid_and(String email, String password) {
-        loginPage.login(email,password);
+        loginPage.login(email, password);
     }
 
     @When("the user enters missing {string} and {string}_KT")
@@ -75,10 +78,8 @@ public class LoginStepDefs_Kerem {
     @Then("the top title contains {string}_KT")
     public void the_top_title_contains(String expectedTopTittle) {
         String actualtopTittle = loginPage.topTitle.getText();
-        Assert.assertEquals(expectedTopTittle,actualtopTittle);
+        Assert.assertEquals(expectedTopTittle, actualtopTittle);
     }
-
-
 
 
 }

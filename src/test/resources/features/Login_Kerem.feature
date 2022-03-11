@@ -1,4 +1,4 @@
-@smoke
+@login
 Feature: FinWorksErp Login Feature
 
   Background:

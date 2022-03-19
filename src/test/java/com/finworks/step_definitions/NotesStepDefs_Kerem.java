@@ -46,7 +46,7 @@ public class NotesStepDefs_Kerem {
     @When("the user clicks the Save button_KT")
     public void the_user_clicks_the_Save_button_KT() {
         ntpage.saveButton.click();
-        BrowserUtils.waitFor(2);
+       BrowserUtils.waitFor(2);
     }
 
     @When("the title is {string}_KT")

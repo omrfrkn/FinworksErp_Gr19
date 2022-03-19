@@ -36,11 +36,11 @@ Feature: FinWorksErp NotesModule_KT
     Then the user sees the "EU8 Started" under the "<Column>" tab_KT
     Examples:
       | Column    |
-      | New       |
       | Today     |
       | This Week |
       | Later     |
       | Weekend   |
+      | New       |
 
 
   Scenario: User should be able to delete an existing note_KT

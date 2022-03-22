@@ -31,9 +31,9 @@ public class LoginStepDefs_Kerem {
     @Then("the title contains {string}_KT")
     public void the_title_contains(String expectedTitle) {
         WebDriverWait wait = new WebDriverWait(Driver.get(),10);
-        wait.until(ExpectedConditions.titleIs(expectedTitle));
+        wait.until(ExpectedConditions.titleContains(expectedTitle));
         String actualTitle = Driver.get().getTitle();
-        Assert.assertEquals(expectedTitle, actualTitle);
+        Assert.assertTrue(actualTitle.contains(expectedTitle));
     }
 
     @Then("the user should be able to see own name as a {string}_KT")

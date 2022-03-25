@@ -1,4 +1,4 @@
-@smoke
+
 Feature:FinworkErp Notes Module Scenarios
 
   Background:
